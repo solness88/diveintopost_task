@@ -2,7 +2,6 @@
 
 文書共有がSlack依存になってしまっている状態を改善するためのアプリケーション
 社内での情報共有をスムーズに進めるために開発された社内用ツール
-
 小規模かつ社内用ツールのため、挙動確認の自動化にそれほど工数を使う必要はない、との理由から統合テスト（Feature Spec）は未実装。
 ただしUser招待などのロジックテスト（Model Spec）は実装している。
 
@@ -93,11 +92,11 @@ git remote addなどで、originという文字列と、URLを紐づける
 This theme is an application to improve Slack dependency of document sharing.  
 (An in-house tool developed to facilitate internal information sharing)
 　
- 
+
 This time, the integration test (Feature Spec) is not implemented.  
 The reason is that because this application is a small and in-house tool, we do not need to take many man-hours to automate behavior confirmation.
 　
- 
+
 However, logic tests (Model Spec) such as user invitation are implemented.
 
 ## Version
