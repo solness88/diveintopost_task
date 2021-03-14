@@ -48,9 +48,15 @@
                   <p>+ <%= I18n.t('views.messages.create_article') %></p>
                 <% end %>
               </li>
-              <li class="nav-item m-3">
-                <button type="button" class="btn btn-outline-danger btn-sm"><%= link_to t('views.button.delete_agenda'), agenda_path(agenda.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-              </li>
+              <% if agenda.user_id == current_user.id %>
+                <% @team_owner.each do |owner| %>
+                  <% if owner.owner_id == current_user.id %>
+                    <li class="nav-item m-3">
+                      <button type="button" class="btn btn-outline-danger btn-sm"><%= link_to t('views.button.delete_agenda'), agenda_path(agenda.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+                    </li>
+                  <% end %>
+                <% end %>
+              <% end %>
             </ul>
           </li>
         <% end %>
