@@ -25,8 +25,9 @@ class AgendasController < ApplicationController
   def destroy
     @destroy_agenda = @agenda
     @agenda_user_email = User.where(keep_team_id:@agenda.team_id).pluck(:email)
+    binding.pry
     if @agenda.destroy
-      DeleteMailer.delete_mail.deliver
+      DeleteMailer.delete_mail(@destroy_agenda).deliver
       redirect_to dashboard_path, notice:"アジェンダを削除しました"
     else
       render :new
