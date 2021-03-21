@@ -24,10 +24,10 @@ class AgendasController < ApplicationController
 
   def destroy
     @destroy_agenda = @agenda
-    #@agenda_users = Team.find(@agenda.team_id).assign_users
+    # @agenda_users = Team.find(@agenda.team_id).assign_users
     if @agenda.destroy
       DeleteMailer.delete_mail(@destroy_agenda).deliver
-      redirect_to dashboard_path, notice:"アジェンダを削除しました"
+      redirect_to dashboard_path, notice: "アジェンダを削除しました"
     else
       render :new
     end

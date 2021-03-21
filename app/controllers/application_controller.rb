@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_team_owner
-    @team_owner = Team.where(owner_id:current_user.id)
+    @team_owner = Team.where(owner_id: current_user.id)
   end
 
   def init_team

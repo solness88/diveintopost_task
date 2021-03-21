@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'seed-fu', '~> 2.3'
 gem 'devise'
+gem 'rubocop', require: false
 
 group :development, :test do
   gem 'awesome_print'
